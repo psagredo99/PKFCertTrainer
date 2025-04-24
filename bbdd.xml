@@ -1,0 +1,392 @@
+<questions>
+    <question id="1">
+        <text>Cloud Kicks has organization-wide defaults set to Private for Account. ... With the rollout of Opportunity Teams, what should a consultant consider?</text>
+        <option id="A">The Opportunity will be implicitly Write for the team.</option>
+        <option id="B">Opportunity should be set to Public Read/Write first.</option>
+        <option id="C" correct="true">The Opportunity's Account will be Implicitly Read for the team.</option>
+    </question>
+    <question id="2">
+        <text>Universal Containers has a fiscal year that starts in February and ends in January. The SVP of sales has reinforced how important it is to measure the sales teams' performance based on this fiscal year and has asked how Sales Cloud can support this request. Which solution should the consultant recommend?</text>
+        <option id="A">Update the User settings.</option>
+        <option id="B" correct="true">Update the Company settings.</option>
+        <option id="C">Update the Locale settings.</option>
+    </question>
+    <question id="3">
+        <text>Cloud Kicks (CK) has recently lost several large deals to a competitor. CK management wants to start tracking the reasons why opportunities are being lost. What is the most efficient way for a consultant to meet this requirement?</text>
+        <option id="A" correct="true">Create a new custom field on the Opportunity object.</option>
+        <option id="B">Create a Competitors channel In Slack to share Insights and stories.</option>
+        <option id="C">Create a new custom object and automation to track competitors.</option>
+    </question>
+    <question id="4">
+        <text>Sales leadership at Universal Containers is concerned that sales reps are negotiating deals with contacts without the authority to make a decision, resulting in lost deals. What should the consultant recommend to resolve the issue?</text>
+        <option id="A">Enable Opportunity Teams so sales reps can track the decision maker for each opportunity.</option>
+        <option id="B" correct="true">Require sales reps to add the stakeholder as the decision maker on each opportunity before the rep can progress the stage.</option>
+        <option id="C">Allow sales reps to mark the contact on each opportunity as "Primary” to indicate the decision maker.</option>
+    </question>
+    <question id="5">
+        <text>An executive at Cloud Kicks (CK) has asked its admin to create a diagram showing the high-level processes within the business. CK plans to use the diagram to show the context of a new process within the overall business. What should the admin create to meet this requirement?</text>
+        <option id="A">Detail Process Mapping</option>
+        <option id="B">Value Stream Map</option>
+        <option id="C" correct="true">Capability Model</option>
+    </question>
+    <question id="6">
+        <text>A sales rep owns an opportunity and can view the ... associated account, but is unable to view contacts on that account. What should the consultant recommend to allow Account owners to selectively share an Account's Contacts with Opportunity owners?</text>
+        <option id="A" correct="true">Add Opportunity owners to the Account Team and configure Contact sharing.</option>
+        <option id="B">Transfer Contact ownership from themselves to the Opportunity owner.</option>
+        <option id="C">Add Opportunity owners to the Opportunity Team and configure Contact sharing.</option>
+    </question>
+    <question id="7">
+        <text>What should the consultant take into consideration when activating Orders?</text>
+        <option id="A">New Products can be added to active orders.</option>
+        <option id="B">Products can be removed from active reduction orders.</option>
+        <option id="C" correct="true">Orders can be activated only if they include a Product.</option>
+    </question>
+    <question id="8">
+        <text>Universal Containers (UC) hired a consulting company to implement Sales Cloud. This will be the third CRM application UC has used in the past 5 years. Employees have failed to adopt the previous two applications. Which step should be part of UC's plan to help drive adoption of Sales Cloud?</text>
+        <option id="A" correct="true">Identify change management champions.</option>
+        <option id="B">Implement User Acceptance Testing (UAT).</option>
+        <option id="C">Revoke user access to legacy systems.</option>
+    </question>
+    <question id="9">
+        <text>Cloud Kicks is restructuring its sales teams to align with its product lines. Each sales rep will focus only on the accounts they've been assigned. Sales reps will run specific product upsell processes. Which action should the consultant take to support a successful sales team transition?</text>
+        <option id="A">Meet with executive sales leadership to understand the requirements for record sharing.</option>
+        <option id="B" correct="true">Meet with territory sales leadership to design territory assignment rules.</option>
+        <option id="C">Meet with sales reps to review products they are assigned and implement Opportunity Teams.</option>
+    </question>
+    <question id="10">
+        <text>Cloud Kicks is implementing Sales Cloud and has asked a consultant to create an architecture diagram of the system. Which stage of the project lifecycle does this fall under?</text>
+        <option id="A">Initiate</option>
+        <option id="B">Execute</option>
+        <option id="C" correct="true">Plan</option>
+    </question>
+    <question id="11">
+        <text>The admin at Universal Containers has been getting complaints from sales reps about duplicate leads within Sales Cloud. The admin has already set up a Matching Rule for Leads. What should the consultant recommend to resolve the issue?</text>
+        <option id="A" correct="true">Confirm the custom Lead Matching Rule is activated.</option>
+        <option id="B">Change the criteria for the standard Lead Matching Rule.</option>
+        <option id="C">Confirm the standard Lead Matching Rule is deactivated.</option>
+    </question>
+    <question id="12">
+        <text>Cloud Kicks (CK) has acquired a competitor that also uses Sales Cloud. They have many of the same customers and prospects. The CEO of CK wants the consultant to work with senior managers to document use cases and determine a project plan for everyone who will be on the CK org. Which action should the consultant recommend?</text>
+        <option id="A">Hold a kickoff meeting with the CK stakeholders.</option>
+        <option id="B" correct="true">Conduct discovery sessions and document existing business practices for each company.</option>
+        <option id="C">Export the data from the competitor's system and merge It Into CK's org.</option>
+    </question>
+    <question id="13">
+        <text>The sales director of retail products at Cloud Kicks wants to allow sales reps to clone orders to avoid repetitive tasks. Which guideline should a consultant consider when cloning an order with products?</text>
+        <option id="A">A cloned order must have a later end date from the associated contract.</option>
+        <option id="B" correct="true">A cloned order’s start date must fall between the associated contract’s start and end dates.</option>
+        <option id="C">A cloned order must be associated with the same contract as the original order.</option>
+    </question>
+    <question id="14">
+        <text>The leadership team at Cloud Kicks wants to improve the rate of user adoption of Sales Cloud. Which option should the consultant recommend?</text>
+        <option id="A" correct="true">Use a collaboration tool to gather feedback from users.</option>
+        <option id="B">Add Approval processes to enforce data standards.</option>
+        <option id="C">Conduct a requirements workshop to gather user stories.</option>
+    </question>
+    <question id="15">
+        <text>Cloud Kicks has recently hired a new inside sales team. Management wants to ensure that steps in the sales process are clear and adhered to by the team. Each step must have clear guidelines, support materials, and coaching tips. What should the consultant recommend to support the new sales team and management?</text>
+        <option id="A">Create a flow paired to each of the Opportunity stages.</option>
+        <option id="B">Create Validation Rules on the Opportunity Stage field.</option>
+        <option id="C" correct="true">Create a Path on the Opportunity object.</option>
+    </question>
+    <question id="16">
+        <text>Which prerequisite should the consultant consider before enabling Opportunity Splits?</text>
+        <option id="A">Add customized split types to opportunities.</option>
+        <option id="B">Ensure open opportunities are owned by active users.</option>
+        <option id="C" correct="true">Enable Opportunity Teams and confirm the owner is a team member.</option>
+    </question>
+    <question id="17">
+        <text>A consultant for Cloud Kicks is migrating data from an on-premises system to Salesforce. The consultant has imported Account records, and is attempting to import the associated Contacts using Data Loader, but the import has failed records. The error messages all read UNABLE TO LOCK ROW. What is causing these records to fail?</text>
+        <option id="A" correct="true">Updates to child records that have the same parent records are being processed simultaneously.</option>
+        <option id="B">An Apex trigger on the Account object is firing on insert and causing the Contact import to fail.</option>
+        <option id="C">Contact records should be imported in the same batch as Account records.</option>
+    </question>
+    <question id="18">
+        <text>The admin at Universal Containers is attempting to retire a Product that is being replaced by a newer version, but they are receiving an error because the Product is associated to an Opportunity. What should the consultant recommend to resolve the issue most efficiently?</text>
+        <option id="A" correct="true">Create a flow to delete the Product from the Price Book.</option>
+        <option id="B">Edit the Product record and uncheck the Active field.</option>
+        <option id="C">Archive the Product and each related Price Book entry.</option>
+    </question>
+    <question id="19">
+        <text>Universal Containers uses Sales Territories and is working with a consultant to reassign Accounts into new territories. Which attribute of Sales Territories should the consultant consider when developing the new territory model?</text>
+        <option id="A">The system administrator profile is required to run territory planning reports.</option>
+        <option id="B" correct="true">A model must be activated in order to view reassigned accounts.</option>
+        <option id="C">All Account assignment rules should be run when the model state is set to Planning.</option>
+    </question>
+    <question id="20">
+        <text>Northern Trail Outfitters wants to migrate its Sales Territories to a new structure for the upcoming fiscal year. Which aspect should a consultant consider for this migration?</text>
+        <option id="A" correct="true">Access to a territory model is controlled through profiles or permission sets.</option>
+        <option id="B">Territory user assignments are migrated to the new model.</option>
+        <option id="C">Only one territory model can be active at any given time.</option>
+    </question>
+    <question id="21">
+        <text>Cloud Kicks wants to assign territories in bulk to Opportunities. What should the consultant do to meet the requirement?</text>
+        <option id="A" correct="true">Run the filter-based Opportunity territory assignment.</option>
+        <option id="B">Schedule auto-assignment rules in the territory model.</option>
+        <option id="C">Update Opportunity sales team with territory assignments.</option>
+    </question>
+    <question id="22">
+        <text>The sales director at Cloud Kicks wants to prevent users from viewing each other’s Opportunities but wants them to check to see that the Account already exists prior to creating a new Account. Which organization-wide default should the consultant recommend?</text>
+        <option id="A">Set Account and Opportunity to Public Read Only.</option>
+        <option id="B">Set Account to Public Read Only and use a criteria-based sharing rule on Opportunity.</option>
+        <option id="C" correct="true">Set Account to Public Read Only and set Opportunity to Private.</option>
+    </question>
+    <question id="23">
+        <text>Some of the large accounts at Northern Trail Outfitters have many contacts. Sales reps want to see how these contacts relate to each other and understand the reporting structure. Which feature should the consultant recommend to meet this requirement?</text>
+        <option id="A" correct="true">Contact Hierarchy</option>
+        <option id="B">Contacts to Multiple Accounts</option>
+        <option id="C">Contact Roles</option>
+    </question>
+    <question id="24">
+        <text>Cloud Kicks is running a campaign for the Shoe of the Month club. Sales management wants to use Campaign Influence features with Opportunities to attribute a percentage of success to influential campaigns. Which feature will allow for revenue share with standard and custom attribution models?</text>
+        <option id="A">Create a reporting snapshot for Campaign Influence.</option>
+        <option id="B" correct="true">Use Customizable Campaign Influence for reporting.</option>
+        <option id="C">Create a formula field to track Campaign Influence.</option>
+    </question>
+    <question id="25">
+        <text>Cloud Kicks has completed the discovery stage and leadership has aligned on the project's business goals. What should the consultant formalize with stakeholders before moving on to the next project stage?</text>
+        <option id="A" correct="true">Define key metrics to identify how success will be measured.</option>
+        <option id="B">Onboard team members to start development of the solution.</option>
+        <option id="C">Create user stories to present for prioritization.</option>
+    </question>
+    <question id="26">
+        <text>Cloud Kicks (CK) has customers who are often involved with more than one company. CK wants to track these contacts on associated accounts without creating duplicate Contact records. What should a consultant consider when enabling the Set Up Contacts to Multiple Accounts feature?</text>
+        <option id="A">Create a junction object to link Accounts and Contacts.</option>
+        <option id="B" correct="true">Designate a default account as the Contact's primary account.</option>
+        <option id="C">Add account relationships from the Contact record.</option>
+    </question>
+     <question id="27">
+        <text>Universal Containers (UC) wants to implement a process to help sales reps follow up on Opportunities that have not been updated in the past 30 days. What should a consultant recommend to meet this requirement?</text>
+        <option id="A">Create a report that highlights Opportunities not updated in the past 30 days.</option>
+        <option id="B">Use Process Builder to send a reminder email to the Opportunity owner.</option>
+        <option id="C">Set up a scheduled flow to update a custom “Last Follow Up” field and trigger an alert.</option>
+    </question>
+    <question id="28">
+        <text>Cloud Kicks (CK) has customers who are often involved with more than one company. CK wants to track these contacts on associated accounts without creating duplicate Contact records. What should a consultant consider when enabling the Set Up Contacts to Multiple Accounts feature?</text>
+        <option id="A">Create a junction object to link Accounts and Contacts.</option>
+        <option id="B">Designate a default account as the Contact's primary account.</option>
+        <option id="C">Add account relationships from the Contact record.</option>
+    </question>
+    <question id="29">
+        <text>Cloud Kicks has completed the discovery stage and leadership has aligned on the project's business goals. What should the consultant formalize with stakeholders before moving on to the next project stage?</text>
+        <option id="A">Define key metrics to identify how success will be measured.</option>
+        <option id="B">Onboard team members to start development of the solution.</option>
+        <option id="C">Create user stories to present for prioritization.</option>
+    </question>
+    <question id="30">
+        <text>Cloud Kicks is running a campaign for the Shoe of the Month club. Sales management wants to use Campaign Influence features with Opportunities to attribute a percentage of success to influential campaigns. Which feature will allow for revenue share with standard and custom attribution models?</text>
+        <option id="A">Create a reporting snapshot for Campaign Influence.</option>
+        <option id="B">Use Customizable Campaign Influence for reporting.</option>
+        <option id="C">Create a formula field to track Campaign Influence.</option>
+    </question>
+    <question id="31">
+        <text>Some of the large accounts at Northern Trail Outfitters have many contacts. Sales reps want to see how these contacts relate to each other and understand the reporting structure. Which feature should the consultant recommend to meet this requirement?</text>
+        <option id="A">Contact Hierarchy</option>
+        <option id="B">Contacts to Multiple Accounts</option>
+        <option id="C">Contact Roles</option>
+    </question>
+    <question id="32">
+        <text>The sales director at Cloud Kicks wants to prevent users from viewing each other’s Opportunities but wants them to check to see that the Account already exists prior to creating a new Account. Which organization-wide default should the consultant recommend?</text>
+        <option id="A">Set Account and Opportunity to Public Read Only.</option>
+        <option id="B">Set Account to Public Read Only and use a criteria-based sharing rule on Opportunity.</option>
+        <option id="C">Set Account to Public Read Only and set Opportunity to Private.</option>
+    </question>
+    <question id="33">
+        <text>Cloud Kicks wants to assign territories in bulk to Opportunities. What should the consultant do to meet the requirement?</text>
+        <option id="A">Run the filter-based Opportunity territory assignment.</option>
+        <option id="B">Schedule auto-assignment rules in the territory model.</option>
+        <option id="C">Update Opportunity sales team with territory assignments.</option>
+    </question>
+    <question id="34">
+        <text>Northern Trail Outfitters wants to migrate its Sales Territories to a new structure for the upcoming fiscal year. Which aspect should a consultant consider for this migration?</text>
+        <option id="A">Access to a territory model is controlled through profiles or permission sets.</option>
+        <option id="B">Territory user assignments are migrated to the new model.</option>
+        <option id="C">Only one territory model can be active at any given time.</option>
+    </question>
+    <question id="35">
+        <text>Universal Containers uses Sales Territories and is working with a consultant to reassign Accounts into new territories. Which attribute of Sales Territories should the consultant consider when developing the new territory model?</text>
+        <option id="A">The system administrator profile is required to run territory planning reports.</option>
+        <option id="B">A model must be activated in order to view reassigned accounts.</option>
+        <option id="C">All Account assignment rules should be run when the model state is set to Planning.</option>
+    </question>
+    <question id="36">
+        <text>The admin at Universal Containers is attempting to retire a Product that is being replaced by a newer version, but they are receiving an error because the Product is associated to an Opportunity. What should the consultant recommend to resolve the issue most efficiently?</text>
+        <option id="A">Create a flow to delete the Product from the Price Book.</option>
+        <option id="B">Edit the Product record and uncheck the Active field.</option>
+        <option id="C">Archive the Product and each related Price Book entry.</option>
+    </question>
+    <question id="37">
+        <text>A consultant for Cloud Kicks is migrating data from an on-premises system to Salesforce. The consultant has imported Account records, and is attempting to import the associated Contacts using Data Loader, but the import has failed records. The error messages all read UNABLE TO LOCK ROW. What is causing these records to fail?</text>
+        <option id="A">Updates to child records that have the same parent records are being processed simultaneously.</option>
+        <option id="B">An Apex trigger on the Account object is firing on insert and causing the Contact import to fail.</option>
+        <option id="C">Contact records should be imported in the same batch as Account records.</option>
+    </question>
+    <question id="38">
+        <text>Which prerequisite should the consultant consider before enabling Opportunity Splits?</text>
+        <option id="A">Add customized split types to opportunities.</option>
+        <option id="B">Ensure open opportunities are owned by active users.</option>
+        <option id="C">Enable Opportunity Teams and confirm the owner is a team member.</option>
+    </question>
+    <question id="39">
+        <text>Cloud Kicks has recently hired a new inside sales team. Management wants to ensure that steps in the sales process are clear and adhered to by the team. Each step must have clear guidelines, support materials, and coaching tips. What should the consultant recommend to support the new sales team and management?</text>
+        <option id="A">Create a flow paired to each of the Opportunity stages.</option>
+        <option id="B">Create Validation Rules on the Opportunity Stage field.</option>
+        <option id="C">Create a Path on the Opportunity object.</option>
+    </question>
+    <question id="40">
+        <text>The leadership team at Cloud Kicks wants to improve the rate of user adoption of Sales Cloud. Which option should the consultant recommend?</text>
+        <option id="A">Use a collaboration tool to gather feedback from users.</option>
+        <option id="B">Add Approval processes to enforce data standards.</option>
+        <option id="C">Conduct a requirements workshop to gather user stories.</option>
+    </question>
+    <question id="41">
+        <text>The sales director of retail products at Cloud Kicks wants to allow sales reps to clone orders to avoid repetitive tasks. Which guideline should a consultant consider when cloning an order with products?</text>
+        <option id="A">A cloned order must have a later end date from the associated contract.</option>
+        <option id="B">A cloned order’s start date must fall between the associated contract’s start and end dates.</option>
+        <option id="C">A cloned order must be associated with the same contract as the original order.</option>
+    </question>
+    <question id="42">
+        <text>Cloud Kicks (CK) has acquired a competitor that also uses Sales Cloud. They have many of the same customers and prospects. The CEO of CK wants the consultant to work with senior managers to document use cases and determine a project plan for everyone who will be on the CK org. Which action should the consultant recommend?</text>
+        <option id="A">Hold a kickoff meeting with the CK stakeholders.</option>
+        <option id="B">Conduct discovery sessions and document existing business practices for each company.</option>
+        <option id="C">Export the data from the competitor's system and merge It Into CK's org.</option>
+    </question>
+    <question id="43">
+        <text>The admin at Universal Containers has been getting complaints from sales reps about duplicate leads within Sales Cloud. The admin has already set up a Matching Rule for Leads. What should the consultant recommend to resolve the issue?</text>
+        <option id="A">Confirm the custom Lead Matching Rule is activated.</option>
+        <option id="B">Change the criteria for the standard Lead Matching Rule.</option>
+        <option id="C">Confirm the standard Lead Matching Rule is deactivated.</option>
+    </question>
+    <question id="44">
+        <text>Cloud Kicks is implementing Sales Cloud and has asked a consultant to create an architecture diagram of the system. Which stage of the project lifecycle does this fall under?</text>
+        <option id="A">Initiate</option>
+        <option id="B">Execute</option>
+        <option id="C">Plan</option>
+    </question>
+    <question id="45">
+        <text>Cloud Kicks is restructuring its sales teams to align with its product lines. Each sales rep will focus only on the accounts they've been assigned. Sales reps will run specific product upsell processes. Which action should the consultant take to support a successful sales team transition?</text>
+        <option id="A">Meet with executive sales leadership to understand the requirements for record sharing.</option>
+        <option id="B">Meet with territory sales leadership to design territory assignment rules.</option>
+        <option id="C">Meet with sales reps to review products they are assigned and implement Opportunity Teams.</option>
+    </question>
+    <question id="46">
+        <text>Universal Containers (UC) hired a consulting company to implement Sales Cloud. This will be the third CRM application UC has used in the past 5 years. Employees have failed to adopt the previous two applications. Which step should be part of UC's plan to help drive adoption of Sales Cloud?</text>
+        <option id="A">Identify change management champions.</option>
+        <option id="B">Implement User Acceptance Testing (UAT).</option>
+        <option id="C">Revoke user access to legacy systems.</option>
+    </question>
+    <question id="47">
+        <text>What should the consultant take into consideration when activating Orders?</text>
+        <option id="A">New Products can be added to active orders.</option>
+        <option id="B">Products can be removed from active reduction orders.</option>
+        <option id="C">Orders can be activated only if they include a Product.</option>
+    </question>
+    <question id="48">
+        <text>A sales rep owns an opportunity and can view the associated account, but is unable to view contacts on that account. What should the consultant recommend to allow Account owners to selectively share an Account's Contacts with Opportunity owners?</text>
+        <option id="A">Add Opportunity owners to the Account Team and configure Contact sharing.</option>
+        <option id="B">Transfer Contact ownership from themselves to the Opportunity owner.</option>
+        <option id="C">Add Opportunity owners to the Opportunity Team and configure Contact sharing.</option>
+    </question>
+    <question id="49">
+        <text>An executive at Cloud Kicks (CK) has asked its admin to create a diagram showing the high-level processes within the business. CK plans to use the diagram to show the context of a new process within the overall business. What should the admin create to meet this requirement?</text>
+        <option id="A">Detail Process Mapping</option>
+        <option id="B">Value Stream Map</option>
+        <option id="C">Capability Model</option>
+    </question>
+    <question id="50">
+        <text>Sales leadership at Universal Containers is concerned that sales reps are negotiating deals with contacts without the authority to make a decision, resulting in lost deals. What should the consultant recommend to resolve the issue?</text>
+        <option id="A">Enable Opportunity Teams so sales reps can track the decision maker for each opportunity.</option>
+        <option id="B">Require sales reps to add the stakeholder as the decision maker on each opportunity before the rep can progress the stage.</option>
+        <option id="C">Allow sales reps to mark the contact on each opportunity as "Primary” to indicate the decision maker.</option>
+    </question>
+    <question id="51">
+        <text>Cloud Kicks (CK) has recently lost several large deals to a competitor. CK management wants to start tracking the reasons why opportunities are being lost. What is the most efficient way for a consultant to meet this requirement?</text>
+        <option id="A">Create a new custom field on the Opportunity object.</option>
+        <option id="B">Create a Competitors channel In Slack to share Insights and stories.</option>
+        <option id="C">Create a new custom object and automation to track competitors.</option>
+    </question>
+    <question id="52">
+        <text>Universal Containers has a fiscal year that starts in February and ends in January. The SVP of sales has reinforced how important it is to measure the sales teams' performance based on this fiscal year and has asked how Sales Cloud can support this request. Which solution should the consultant recommend?</text>
+        <option id="A">Update the User settings.</option>
+        <option id="B">Update the Company settings.</option>
+        <option id="C">Update the Locale settings.</option>
+    </question>
+    <question id="53">
+        <text>Cloud Kicks has organization-wide defaults set to Private for Account. With the rollout of Opportunity Teams, what should a consultant consider?</text>
+        <option id="A">The Opportunity will be implicitly Write for the team.</option>
+        <option id="B">Opportunity should be set to Public Read/Write first.</option>
+        <option id="C">The Opportunity's Account will be Implicitly Read for the team.</option>
+    </question>
+   <question id="54">
+        <text>Cloud Kicks has organization-wide defaults set to Private for Account. ... With the rollout of Opportunity Teams, what should a consultant consider?</text>
+        <option id="A">The Opportunity will be implicitly Write for the team.</option>
+        <option id="B">Opportunity should be set to Public Read/Write first.</option>
+        <option id="C">The Opportunity's Account will be Implicitly Read for the team.</option>
+    </question>
+   <question id="55">
+        <text>Universal Containers has a fiscal year that starts in February and ends in January. The SVP of sales has reinforced how important it is to measure the sales teams' performance based on this fiscal year and has asked how Sales Cloud can support this request. Which solution should the consultant recommend?</text>
+        <option id="A">Update the User settings.</option>
+        <option id="B">Update the Company settings.</option>
+        <option id="C">Update the Locale settings.</option>
+    </question>
+   <question id="56">
+        <text>Cloud Kicks (CK) has recently lost several large deals to a competitor. CK management wants to start tracking the reasons why opportunities are being lost. What is the most efficient way for a consultant to meet this requirement?</text>
+        <option id="A">Create a new custom field on the Opportunity object.</option>
+        <option id="B">Create a Competitors channel In Slack to share Insights and stories.</option>
+        <option id="C">Create a new custom object and automation to track competitors.</option>
+    </question>
+   <question id="57">
+        <text>Sales leadership at Universal Containers is concerned that sales reps are negotiating deals with contacts without the authority to make a decision, resulting in lost deals. What should the consultant recommend to resolve the issue?</text>
+        <option id="A">Enable Opportunity Teams so sales reps can track the decision maker for each opportunity.</option>
+        <option id="B">Require sales reps to add the stakeholder as the decision maker on each opportunity before the rep can progress the stage.</option>
+        <option id="C">Allow sales reps to mark the contact on each opportunity as "Primary” to indicate the decision maker.</option>
+    </question>
+   <question id="58">
+        <text>An executive at Cloud Kicks (CK) has asked its admin to create a diagram showing the high-level processes within the business. CK plans to use the diagram to show the context of a new process within the overall business. What should the admin create to meet this requirement?</text>
+        <option id="A">Detail Process Mapping</option>
+        <option id="B">Value Stream Map</option>
+        <option id="C">Capability Model</option>
+    </question>
+   <question id="59">
+        <text>A sales rep owns an opportunity and can view the ... associated account, but is unable to view contacts on that account. What should the consultant recommend to allow Account owners to selectively share an Account's Contacts with Opportunity owners?</text>
+        <option id="A">Add Opportunity owners to the Account Team and configure Contact sharing.</option>
+        <option id="B">Transfer Contact ownership from themselves to the Opportunity owner.</option>
+        <option id="C">Add Opportunity owners to the Opportunity Team and configure Contact sharing.</option>
+    </question>
+   <question id="60">
+        <text>What should the consultant take into consideration when activating Orders?</text>
+        <option id="A">New Products can be added to active orders.</option>
+        <option id="B">Products can be removed from active reduction orders.</option>
+        <option id="C">Orders can be activated only if they include a Product.</option>
+    </question>
+   <question id="61">
+        <text>Universal Containers (UC) hired a consulting company to implement Sales Cloud. This will be the third CRM application UC has used in the past 5 years. Employees have failed to adopt the previous two applications. Which step should be part of UC's plan to help drive adoption of Sales Cloud?</text>
+        <option id="A">Identify change management champions.</option>
+        <option id="B">Implement User Acceptance Testing (UAT).</option>
+        <option id="C">Revoke user access to legacy systems.</option>
+    </question>
+   <question id="62">
+        <text>Cloud Kicks is restructuring its sales teams to align with its product lines. Each sales rep will focus only on the accounts they've been assigned. Sales reps will run specific product upsell processes. Which action should the consultant take to support a successful sales team transition?</text>
+        <option id="A">Meet with executive sales leadership to understand the requirements for record sharing.</option>
+        <option id="B">Meet with territory sales leadership to design territory assignment rules.</option>
+        <option id="C">Meet with sales reps to review products they are assigned and implement Opportunity Teams.</option>
+    </question>
+   <question id="63">
+        <text>Cloud Kicks is implementing Sales Cloud and has asked a consultant to create an architecture diagram of the system. Which stage of the project lifecycle does this fall under?</text>
+        <option id="A">Initiate</option>
+        <option id="B">Execute</option>
+        <option id="C">Plan</option>
+    </question>
+   <question id="64">
+        <text>The admin at Universal Containers has been getting complaints from sales reps about duplicate leads within Sales Cloud. The admin has already set up a Matching Rule for Leads. What should the consultant recommend to resolve the issue?</text>
+        <option id="A">Confirm the custom Lead Matching Rule is activated.</option>
+        <option id="B">Change the criteria for the standard Lead Matching Rule.</option>
+        <option id="C">Confirm the standard Lead Matching Rule is deactivated.</option>
+    </question>
+   <question id="65">
+        <text>Cloud Kicks (CK) has acquired a competitor that also uses Sales Cloud. They have many of the same customers and prospects. The CEO of CK wants the consultant to work with senior managers to document use cases and determine a project plan for everyone who will be on the CK org. Which action should the consultant recommend?</text>
+        <option id="A">Hold a kickoff meeting with the CK stakeholders.</option>
+        <option id="B">Conduct discovery sessions and document existing business practices for each company.</option>
+        <option id="C">Export the data from the competitor's system and merge It Into CK's org.</option>
+    </question>
+</questions>
