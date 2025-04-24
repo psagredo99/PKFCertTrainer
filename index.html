@@ -3,24 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Test Trainer</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 2em; background: #f7f9fa; color: #222; }
-        .question { font-weight: bold; margin-bottom: 1em; font-size: 1.2em; }
-        .answers { margin-bottom: 1em; }
-        .answer { display: block; margin: 0.5em 0; padding: 0.5em; border-radius: 5px; transition: background 0.2s; cursor: pointer; }
-        .answer input[type="radio"] { margin-right: 0.5em; }
-        .answer.selected { background: #e3f2fd; }
-        .answer.correct { background: #c8e6c9; }
-        .answer.incorrect { background: #ffcdd2; }
-        .result { font-weight: bold; margin-bottom: 1em; min-height: 1.5em; }
-        .result.correct { color: #388e3c; }
-        .result.incorrect { color: #d32f2f; }
-        .score { margin-bottom: 1em; font-size: 1.1em; }
-        button { margin-right: 1em; padding: 0.5em 1.2em; border: none; border-radius: 4px; background: #1976d2; color: #fff; font-size: 1em; cursor: pointer; transition: background 0.2s; }
-        button:disabled { background: #b0bec5; cursor: not-allowed; }
-        button:hover:not(:disabled) { background: #1565c0; }
-        #questionBox { background: #fff; border-radius: 8px; box-shadow: 0 2px 8px #0001; padding: 2em; max-width: 600px; margin: auto; }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div style="display: flex; flex-direction: column; align-items: flex-start; position: absolute; top: 1.5em; left: 2em;">
@@ -47,6 +30,13 @@
             <div id="passwordError" style="color:#d32f2f;margin-top:1em;display:none;">Incorrect password. Try again.</div>
         </div>
     </div>
+    <div id="examSelectOverlay" style="position:fixed;top:0;left:0;width:100vw;height:100vh;background:#fff;z-index:9998;display:none;flex-direction:column;justify-content:center;align-items:center;">
+        <div style="background:#f7f9fa;padding:2em 3em;border-radius:10px;box-shadow:0 2px 8px #0002;display:flex;flex-direction:column;align-items:center;min-width:320px;">
+            <h2 style="margin-bottom:0.5em;">Select Exam</h2>
+            <p style="margin-bottom:1.5em;color:#555;text-align:center;max-width:350px;">Choose an exam to begin your training session. You can add more exams in the future.</p>
+            <div id="examList"></div>
+        </div>
+    </div>
     <div id="summaryOverlay" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:#fff;z-index:9999;overflow:auto;">
         <div style="background:#f7f9fa;padding:2em 3em;border-radius:10px;box-shadow:0 2px 8px #0002;max-width:700px;margin:3em auto;">
             <h2>Summary</h2>
@@ -54,182 +44,10 @@
             <button id="closeSummaryBtn" style="margin-top:2em;">Back to Quiz</button>
         </div>
     </div>
-    <script>
-        // Load questions from XML
-        async function loadQuestionsFromXML(xmlPath = 'bbdd.xml') {
-            const response = await fetch(xmlPath);
-            const xmlText = await response.text();
-            const parser = new DOMParser();
-            const xmlDoc = parser.parseFromString(xmlText, "application/xml");
-            const questionNodes = xmlDoc.querySelectorAll('question');
-            const questions = [];
-            questionNodes.forEach((qNode, idx) => {
-                const number = qNode.getAttribute('id') || (idx + 1);
-                const questionText = qNode.querySelector('text')?.textContent?.trim() || '';
-                const answers = [];
-                let correct = null;
-                qNode.querySelectorAll('option').forEach(opt => {
-                    const optionId = opt.getAttribute('id');
-                    const text = opt.textContent.trim();
-                    answers.push({ option: optionId, text });
-                    if (opt.hasAttribute('correct')) correct = optionId;
-                });
-                questions.push({ number, question: questionText, answers, correct });
-            });
-            return questions;
-        }
-
-        let questions = [];
-        let current = 0;
-        let selected = null;
-        let ok = 0, err = 0;
-        let answersStatus = [];
-
-        function loadQuestion(idx) {
-            if (idx >= questions.length) {
-                document.getElementById('questionBox').innerHTML = '<b>No more questions!</b>';
-                return;
-            }
-            const q = questions[idx];
-            document.getElementById('question').textContent = `${q.number}. ${q.question}`;
-            const answersDiv = document.getElementById('answers');
-            answersDiv.innerHTML = '';
-            q.answers.forEach(a => {
-                const label = document.createElement('label');
-                label.className = 'answer';
-                const radio = document.createElement('input');
-                radio.type = 'radio';
-                radio.name = 'answer';
-                radio.value = a.option;
-                radio.onclick = () => {
-                    selected = a.option;
-                    document.querySelectorAll('.answer').forEach(el => el.classList.remove('selected'));
-                    label.classList.add('selected');
-                };
-                label.appendChild(radio);
-                label.appendChild(document.createTextNode(` ${a.option}. ${a.text}`));
-                answersDiv.appendChild(label);
-            });
-            document.getElementById('result').textContent = '';
-            document.getElementById('result').className = 'result';
-            document.getElementById('verifyBtn').disabled = false;
-            document.getElementById('nextBtn').disabled = true;
-            selected = null;
-            // Restore previous selection if any
-            if (answersStatus[idx] && answersStatus[idx].selected) {
-                const prev = answersStatus[idx].selected;
-                document.querySelectorAll('input[name="answer"]').forEach(radio => {
-                    if (radio.value === prev) {
-                        radio.checked = true;
-                        radio.parentElement.classList.add('selected');
-                        selected = prev;
-                    }
-                });
-            }
-        }
-
-        document.getElementById('verifyBtn').onclick = function() {
-            if (!selected) {
-                document.getElementById('result').textContent = 'Please select an answer.';
-                document.getElementById('result').className = 'result incorrect';
-                return;
-            }
-            const q = questions[current];
-            document.querySelectorAll('.answer').forEach(label => {
-                const radio = label.querySelector('input[type="radio"]');
-                if (radio.value === q.correct) {
-                    label.classList.add('correct');
-                }
-                if (radio.checked && radio.value !== q.correct) {
-                    label.classList.add('incorrect');
-                }
-                radio.disabled = true;
-            });
-            let wasCorrect = selected === q.correct;
-            if (wasCorrect) {
-                document.getElementById('result').textContent = 'Correct!';
-                document.getElementById('result').className = 'result correct';
-                ok++;
-            } else {
-                document.getElementById('result').textContent = 'Incorrect.';
-                document.getElementById('result').className = 'result incorrect';
-                err++;
-            }
-            answersStatus[current] = { selected, correct: wasCorrect };
-            document.getElementById('ok').textContent = ok;
-            document.getElementById('err').textContent = err;
-            document.getElementById('verifyBtn').disabled = true;
-            document.getElementById('nextBtn').disabled = false;
-        };
-
-        document.getElementById('nextBtn').onclick = function() {
-            current++;
-            loadQuestion(current);
-        };
-
-        // Initial load from XML
-        loadQuestionsFromXML().then(qs => {
-            questions = qs;
-            current = 0;
-            ok = 0;
-            err = 0;
-            answersStatus = Array(questions.length);
-            document.getElementById('ok').textContent = ok;
-            document.getElementById('err').textContent = err;
-            loadQuestion(current);
-        }).catch(err => {
-            document.getElementById('questionBox').innerHTML = '<b>Error loading questions.</b>';
-            console.error(err);
-        });
-
-        // Password protection logic
-        document.getElementById('passwordBtn').onclick = function() {
-            var input = document.getElementById('passwordInput').value;
-            if (input === 'PKF123') {
-                document.getElementById('passwordOverlay').style.display = 'none';
-            } else {
-                document.getElementById('passwordError').style.display = 'block';
-            }
-        };
-        document.getElementById('passwordInput').addEventListener('keydown', function(e) {
-            if (e.key === 'Enter') {
-                document.getElementById('passwordBtn').click();
-            }
-        });
-
-        document.getElementById('summaryBtn').onclick = function() {
-            // Build summary list
-            const listDiv = document.getElementById('summaryList');
-            listDiv.innerHTML = '';
-            questions.forEach((q, idx) => {
-                const div = document.createElement('div');
-                div.style.display = 'flex';
-                div.style.alignItems = 'center';
-                div.style.marginBottom = '0.5em';
-                let status = answersStatus[idx];
-                let color = '#b0bec5';
-                let text = 'Unanswered';
-                if (status) {
-                    if (status.correct) { color = '#c8e6c9'; text = 'Correct'; }
-                    else { color = '#ffcdd2'; text = 'Incorrect'; }
-                }
-                div.style.background = color;
-                div.style.borderRadius = '5px';
-                div.style.padding = '0.5em 1em';
-                div.style.cursor = 'pointer';
-                div.innerHTML = `<b>${q.number}.</b> ${q.question} <span style='margin-left:auto;font-weight:bold;'>${text}</span>`;
-                div.onclick = function() {
-                    document.getElementById('summaryOverlay').style.display = 'none';
-                    loadQuestion(idx);
-                    current = idx;
-                };
-                listDiv.appendChild(div);
-            });
-            document.getElementById('summaryOverlay').style.display = 'block';
-        };
-        document.getElementById('closeSummaryBtn').onclick = function() {
-            document.getElementById('summaryOverlay').style.display = 'none';
-        };
-    </script>
+    <div class="credit-top-right">
+  <span style="color:#111;">Developed by </span>
+  <a href="https://github.com/psagredo99" target="_blank" style="color:#1976d2;text-decoration:none;font-weight:bold;">@psagredo99</a>
+</div>
+    <script src="main.js"></script>
 </body>
 </html>
