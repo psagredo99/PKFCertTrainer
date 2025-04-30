@@ -2,26 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test Trainer</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div style="display: flex; flex-direction: column; align-items: flex-start; position: absolute; top: 1.5em; left: 2em;">
         <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
-            <img src="logoPKF.png" alt="PKF Attest Logo" style="height: 70px; margin-bottom: 0.3em; display: block;" />
+            <img src="img/logoPKF.png" alt="PKF Attest Logo" style="height: 70px; margin-bottom: 0.3em; display: block;" />
             <h1 style="margin: 0; font-size: 2em; text-align: center; width: 100%;">Salesforce Cert Trainer</h1>
         </div>
     </div>
     <div style="height: 130px;"></div>
     <div class="score">Correct: <span id="ok">0</span> | Incorrect: <span id="err">0</span></div>
+    <button id="backToExamBtn" class="back-to-exam-btn">Back to Exam Selection</button>
     <div id="questionBox">
         <div class="question" id="question"></div>
         <div class="answers" id="answers"></div>
         <div class="result" id="result"></div>
         <button id="verifyBtn">Verify</button>
         <button id="nextBtn" disabled>Next</button>
-        <button id="summaryBtn" style="background:#388e3c;">Summary</button>
     </div>
+    <button id="summaryBtn" style="background:#388e3c;">Summary</button>
     <div id="passwordOverlay" style="position:fixed;top:0;left:0;width:100vw;height:100vh;background:#fff;z-index:9999;display:flex;flex-direction:column;justify-content:center;align-items:center;">
         <div style="background:#f7f9fa;padding:2em 3em;border-radius:10px;box-shadow:0 2px 8px #0002;display:flex;flex-direction:column;align-items:center;">
             <h2 style="margin-bottom:1em;">Enter Password</h2>
@@ -31,23 +33,44 @@
         </div>
     </div>
     <div id="examSelectOverlay" style="position:fixed;top:0;left:0;width:100vw;height:100vh;background:#fff;z-index:9998;display:none;flex-direction:column;justify-content:center;align-items:center;">
-        <div style="background:#f7f9fa;padding:2em 3em;border-radius:10px;box-shadow:0 2px 8px #0002;display:flex;flex-direction:column;align-items:center;min-width:320px;">
+        <div style="background:#f7f9fa;padding:2em 3em;border-radius:10px;box-shadow:0 2px 8px #0002;display:flex;flex-direction:column;align-items:center;min-width:320px;position:relative;">
+            <img src="img/logoPKF.png" alt="PKF Attest Logo" style="height: 60px; margin-bottom: 0.7em; display: block;" />
+            <div class="credit-top-right" style="position:absolute;top:1.2em;right:1.5em;background:transparent;box-shadow:none;padding:0;">
+                <span style="color:#111;">Developed by </span>
+                <a href="https://github.com/psagredo99" target="_blank" style="color:#1976d2;text-decoration:none;font-weight:bold;">@psagredo99</a>
+            </div>
             <h2 style="margin-bottom:0.5em;">Select Exam</h2>
             <p style="margin-bottom:1.5em;color:#555;text-align:center;max-width:350px;">Choose an exam to begin your training session. You can add more exams in the future.</p>
-            <div id="examList"></div>
+            <!-- Certification Map Selection -->
+            <div id="certMapContainer" style="position:relative; margin-bottom:1.5em;">
+                <img src="img/mapa.png" alt="Salesforce Certification Map" usemap="#certmap" style="max-width:100%;height:auto;display:block;border-radius:10px;box-shadow:0 2px 8px #0002;" />
+                <map name="certmap">
+                    <!-- Example clickable area for Sales Consultant (adjust coords as needed) -->
+                    <area shape="rect" coords="120,80,320,180" href="#" alt="Sales Consultant" title="Sales Consultant" onclick="selectExamByName('Sales consultant');return false;">
+                    <!-- Example clickable area for Service Consultant -->
+                    <area shape="rect" coords="350,200,500,300" href="#" alt="Service Consultant" title="Service Consultant" onclick="selectExamByName('Service consultant');return false;">
+                    <!-- Example clickable area for Administrator -->
+                    <area shape="circle" coords="600,150,60" href="#" alt="Administrator" title="Administrator" onclick="selectExamByName('Administrator');return false;">
+                </map>
+            </div>
+            <!-- Remove old examList -->
+            <div id="examList" style="display:none;"></div>
+            <div id="pdfUploadSection" class="pdf-upload-section" style="display:none;">
+                <h3>Upload PDF with Questions</h3>
+                <input type="file" id="pdfFileInput" accept="application/pdf" />
+                <button id="uploadPdfBtn" class="verify-btn">Upload & Extract</button>
+                <div id="pdfUploadStatus" class="pdf-upload-status"></div>
+            </div>
         </div>
     </div>
     <div id="summaryOverlay" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:#fff;z-index:9999;overflow:auto;">
-        <div style="background:#f7f9fa;padding:2em 3em;border-radius:10px;box-shadow:0 2px 8px #0002;max-width:700px;margin:3em auto;">
+        <div style="background:#f7f9fa;padding:2em 3em;border-radius:10px;box-shadow:0 2px 8px #0002;max-width:700px;margin:3em auto;position:relative;">
+            <button id="closeSummaryBtn" class="close-summary-btn">Back to Quiz</button>
+            <button id="backToExamBtnSummary" class="back-to-exam-btn" style="right: 10em;">Back to Exam Selection</button>
             <h2>Summary</h2>
             <div id="summaryList"></div>
-            <button id="closeSummaryBtn" style="margin-top:2em;">Back to Quiz</button>
         </div>
     </div>
-    <div class="credit-top-right">
-  <span style="color:#111;">Developed by </span>
-  <a href="https://github.com/psagredo99" target="_blank" style="color:#1976d2;text-decoration:none;font-weight:bold;">@psagredo99</a>
-</div>
-    <script src="main.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
