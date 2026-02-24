@@ -2,7 +2,8 @@
 <p align="center">
   Herramienta web para entrenarte en certificaciones de PKF.  
   <br />
-  <a href="https://pkfsftrainer.vercel.app" target="_blank">Visualízalo online</a>
+    <a>CURRENTLY OFFLINE</a>
+  <a href="https://pkfsftrainer.vercel.app" target="_blank">Visualízalo online </a>
 </p>
 
 ---
